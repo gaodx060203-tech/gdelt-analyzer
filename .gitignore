@@ -1,0 +1,30 @@
+# 编译输出
+out/
+*.class
+build/
+
+# IDE 配置
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# 数据库文件（太大，让用户自己生成）
+data/*.db
+data/*.sqlite
+
+# 下载的 GDELT 数据（几百个 ZIP，共约 30MB）
+data/downloads/*
+data/imports/*
+!data/downloads/.gitkeep
+!data/imports/.gitkeep
+
+# 日志文件
+*.log
+
+# 系统文件
+Thumbs.db
+.DS_Store
+Desktop.ini
