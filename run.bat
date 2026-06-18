@@ -1,24 +1,20 @@
 @echo off
 chcp 65001 >nul
-title ???????? - Maven????
-
+title GDELT Analyzer
 echo.
-echo ==========================================
-echo   ???????????????
-echo   ???????????????????...
-echo ==========================================
+echo ================================================
+echo   GDELT Analyzer
+echo   Global Geopolitical Situation Awareness System
+echo ================================================
 echo.
-
-call mvnw package -DskipTests -q
-
-if %ERRORLEVEL% NEQ 0 (
-    echo ?????????????
+echo [INFO] Building project with Maven...
+call .\mvnw.cmd package -DskipTests -q
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Build failed!
     pause
     exit /b 1
 )
-
+echo [INFO] Build successful. Starting application...
 echo.
-echo ?????????...
-echo.
-
 java -jar target\gdelt-analyzer-1.0.0.jar
+pause
