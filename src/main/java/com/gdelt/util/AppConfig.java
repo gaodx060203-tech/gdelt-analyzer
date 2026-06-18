@@ -19,10 +19,10 @@ public class AppConfig {
         ? System.getenv("GDELT_HOME")
         : jarDir();
 
-    public static final String DATA_DIR     = envOr("GDELT_DATA_DIR",     BASE + "/data");
-    public static final String DOWNLOAD_DIR = envOr("GDELT_DOWNLOAD_DIR", BASE + "/data/downloads");
-    public static final String IMPORT_DIR   = envOr("GDELT_IMPORT_DIR",   BASE + "/data/downloads");
-    public static final String DB_PATH      = envOr("GDELT_DB_PATH",      BASE + "/data/gdelt_data.db");
+    public static final String DATA_DIR     = envOr("GDELT_DATA_DIR",     BASE + File.separator + "data");
+    public static final String DOWNLOAD_DIR = envOr("GDELT_DOWNLOAD_DIR", BASE + File.separator + "data" + File.separator + "downloads");
+    public static final String IMPORT_DIR   = envOr("GDELT_IMPORT_DIR",   BASE + File.separator + "data" + File.separator + "downloads");
+    public static final String DB_PATH      = envOr("GDELT_DB_PATH",      BASE + File.separator + "data" + File.separator + "gdelt_data.db");
     public static final String DB_URL       = "jdbc:sqlite:" + DB_PATH;
     public static final String VERSION      = "3.1";
 
